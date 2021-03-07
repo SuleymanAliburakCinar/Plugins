@@ -10,7 +10,7 @@ import os
 import time
 
 pName = 'sElixirCounter'
-pVersion = '0.1'
+pVersion = '0.2'
 pUrl = "https://raw.githubusercontent.com/SuleymanAliburakCinar/Plugins/master/sElixirCounter.py"
 
 
@@ -182,15 +182,15 @@ def checkElixir(arg):
 					dLamp += item['quantity']
 
 	if arg == "Weapon":
-		handleChatCommand("party Weapon "+str(weapon))
+		handleChatCommand("guild Weapon "+str(weapon))
 	if arg == "Armor":
-		handleChatCommand("party Armor "+str(protector))
+		handleChatCommand("guild Armor "+str(protector))
 	if arg == "Accessory":
-		handleChatCommand("party Accessory "+str(accessory))
+		handleChatCommand("guild Accessory "+str(accessory))
 	if arg == "Shield":
-		handleChatCommand("party Shield "+str(shield))
+		handleChatCommand("guild Shield "+str(shield))
 	if arg == "Lamp":
-		handleChatCommand("party Genie’s Lamp " + str(lamp) +" -- Dirty Lamp " + str(dLamp))
+		handleChatCommand("guild Genie’s Lamp " + str(lamp) +" -- Dirty Lamp " + str(dLamp))
 
 def checkGold():
 	gold = 0;
@@ -203,7 +203,7 @@ def checkGold():
 
 	goldS = format(gold, ",")
 
-	handleChatCommand("party Gold " + str(goldS))
+	handleChatCommand("guild Gold " + str(goldS))
 
 
 
