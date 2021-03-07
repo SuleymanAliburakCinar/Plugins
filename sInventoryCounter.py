@@ -157,9 +157,12 @@ def checkElixir(arg):
 	protector = 0;
 	accessory = 0;
 	shield = 0;
+	lamp = 0
+	dLamp = 0
 
 	items = []
 	items = get_inventory()['items']
+
 
 	if items != []:
 		for item in items:
@@ -173,6 +176,11 @@ def checkElixir(arg):
 					accessory += item['quantity']
 				if "Lv.10" in item['name'] and "(Shield)" in item['name']:
 					shield += item['quantity']
+				if "Genie’s Lamp" in item['name']:
+					lamp += item['quantity']
+				if "Dirty Lamp" in item['name']:
+					dLamp += item['quantity']
+
 	if arg == "Weapon":
 		handleChatCommand("party Weapon "+str(weapon))
 	if arg == "Armor":
@@ -181,6 +189,22 @@ def checkElixir(arg):
 		handleChatCommand("party Accessory "+str(accessory))
 	if arg == "Shield":
 		handleChatCommand("party Shield "+str(shield))
+	if arg == "Lamp":
+		handleChatCommand("party Genie’s Lamp " + str(lamp) +" -- Dirty Lamp " + str(dLamp))
+
+def checkGold():
+	gold = 0;
+
+	chars = []
+	chars = get_character_data()
+
+	if chars != []:
+		gold += chars['gold']
+
+	goldS = format(gold, ",")
+
+	handleChatCommand("party Gold " + str(goldS))
+
 
 
 # ______________________________ Events ______________________________ #
@@ -211,6 +235,10 @@ def handle_chat(t,player,msg):
 			checkElixir("Shield")
 		elif msg == "Acc":
 			checkElixir("Accessory")
+		elif msg == "Lamp":
+			checkElixir("Lamp")
+		elif msg == "Gold":
+			checkGold()
 
 # Called every 500ms
 #def event_loop():
