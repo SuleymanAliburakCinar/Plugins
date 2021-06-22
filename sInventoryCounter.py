@@ -10,8 +10,8 @@ import os
 import time
 
 pName = 'sInventoryCounter'
-pVersion = '0.4'
-pUrl = "https://raw.githubusercontent.com/SuleymanAliburakCinar/Plugins/master/sElixirCounter.py"
+pVersion = '1.0'
+pUrl = "https://raw.githubusercontent.com/SuleymanAliburakCinar/Plugins/master/sInventoryCounter.py"
 
 # ______________________________ Initializing ______________________________ #
 
